@@ -1,0 +1,54 @@
+[{
+        "video": "mkQc6AZ_trA"
+    },
+
+    {
+        "intro_header": "Sproglige virkemidler i politisk satire"
+    },
+
+    {
+
+        "intro_text": "Find appelformer, sproglige og retoriske virkemidler i “Det er fandme uhyggeligt” fra satireprogrammet <i>Den gode, den onde og den virk'li sjove</i>, på DR i 1990-91.<br/> Skuespilleren er Peter Schrøder."
+
+    },
+
+    {
+        "intro_knap": "Begynd opgaven"
+    },
+
+    {
+        "stops": [{
+            "timestamp": 44,
+            "events": [{
+                "eventtype": "info",
+                "tekst": "",
+                "svar": [
+                    "En gendrivelse og en påstand", "En retorisk spørgsmål og en påstand.", "En gendrivelse og et og underbelæg"
+                ],
+                "korrekt": [
+                    "1"
+                ],
+                "feedback": "Hovedpersonen stiller et retorisk spørgsmål, altså et spørgsmål, der ikke kræves et svar på af modtageren: 'Kan I se, hvad der står her, er det ikke en dansker?'. <br/>Peter Schrøder leverer desuden den påstand, at alle danskere er lavet af flæskesvær og brun sovs."
+            }]
+
+
+
+        }, {
+
+
+            "timestamp": 207,
+            "events": [{
+                "eventtype": "info",
+                "tekst": "Hvad er det egentlige budskab i hele talen? Det er politisk satire / samfundssatire og dermed gør Peter Schröder gør grin med både Hr. og Fru Hakkebøf og helsefanatikerne.",
+                "svar": [
+
+                    "Det gør den mere troværdig", "Det gør den mindre troværdig", "Det har ingen effekt"
+                ],
+                "korrekt": [
+                    "1"
+                ],
+                "feedback": "feedback....."
+            }]
+        }]
+    }
+]
