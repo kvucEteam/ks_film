@@ -243,7 +243,7 @@ function timerCheck() {
     if (playing == true) {
         $(".ipad").hide();
     }
-    console.log($(".embed-responsive-16by9").width());
+    //console.log($(".embed-responsive-16by9").width());
     var playTime = Math.round(player.getCurrentTime());
 
     //Gør overlay og timebar responsive:
@@ -286,19 +286,30 @@ function timerCheck() {
     }
 
     //console.log(playTime + "," + timestamp_Array[runde] + ", " + player.getPlaybackRate());
-    if (playTime >= timestamp_num && playing === true) {
-        clearInterval(checkTimer);
-        playing = false;
-        player.pauseVideo();
-        stop_event(runde, 0);
+
+    for (var i = 0; i < timestamp_Array.length; i++) {
+        console.log("TS: " + timestamp_Array[i]);
+
+        if (playTime >= timestamp_Array[i] && playTime < timestamp_Array[i] + 2 && playing === true) {
+
+            clearInterval(checkTimer);
+            playing = false;
+            player.pauseVideo();
+            stop_event(runde, 0);
+        }
     }
 }
 
 // 4. The API will call this function when the video player is ready.
 
 function resumeVideo() {
+
     player.playVideo();
-    checkTimer = setInterval(timerCheck, 200);
+    window.setTimeout(function() {
+        checkTimer = setInterval(timerCheck, 200);
+    }, 5000);
+
+
     console.log("resume..");
 }
 
@@ -365,9 +376,10 @@ function stop_event(tal, taeller) {
         }
     }
     if (spm.eventtype == "info") {
-        $(".popud").html("<div class='btn btn-default btn-lg btn_videre'>Fortsæt</div>");
+        $("#overlay").html("<div class='btn btn-default btn-lg btn_videre'>Fortsæt</div>");
+        
     } else {
-        $(".popud").html("<h5 class='score'>Stop nummer " + (runde + 1) + "/" + stops.length + "&nbsp&nbsp&nbsp&nbsp&nbspKorrekte svar: <span class='score_num'>" + total_score + "</span></h5><div class='container_tekst'><div class='h4 spm_tekst'>" + tekst + "</h4><div class ='svarcontainer'>" + options_text + "</div></div></div><div class='btn btn-default btn-lg btn_videre'>Fortsæt</div>");
+        //$(".popud").html("<h5 class='score'>Stop nummer " + (runde + 1) + "/" + stops.length + "&nbsp&nbsp&nbsp&nbsp&nbspKorrekte svar: <span class='score_num'>" + total_score + "</span></h5><div class='container_tekst'><div class='h4 spm_tekst'>" + tekst + "</h4><div class ='svarcontainer'>" + options_text + "</div></div></div><div class='btn btn-default btn-lg btn_videre'>Fortsæt</div>");
 
     }
     $(".btn_videre").hide();
@@ -478,7 +490,7 @@ function feedback() {
     $(".svarcontainer").delay(2000).fadeOut(1000, function() {
         $(".spm_tekst").fadeOut(0);
         $(".container_tekst").append("<div class='feedback'><div class='h3'>" + spm.feedback + "</div><div class = 'h4'><div class='correct_answers btn-success'>Rigtig besvarelse: </div>" + correct_answers + "<br/></div>");
-        $(".popud").append("<div class ='btn btn-default btn-lg introknap btn_videre'>Fortsæt</div>");
+        $(".overlay").append("<div class ='btn btn-default btn-lg introknap btn_videre'>Fortsæt</div>");
         $(".feedback").fadeOut(0);
         $(".feedback").fadeIn(1000);
 
