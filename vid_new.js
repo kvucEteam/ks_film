@@ -345,7 +345,7 @@ function stop_event(tal, taeller) {
     //Hvis det er første event --> fade overlay ind..!
 
     if (events_taeller === 0) {
-        $("#overlay").fadeIn();
+        //$("#overlay").fadeIn();
     }
 
     //opdater variabler for stop_event..
@@ -386,7 +386,7 @@ function stop_event(tal, taeller) {
 
     if (spm.eventtype == "info") {
         // FAULTY CODE:::
-        $(".btn_videre").fadeIn()
+        //$(".btn_videre").fadeIn()
         $(".btn_videre").click(function() {
             //  $("#overlay").fadeOut(1000);
             next_event();
@@ -408,7 +408,7 @@ function stop_event(tal, taeller) {
                 $(this).toggleClass("btn-info");
             }
             if (chosen == false) {
-                $(".btn_videre").fadeIn().click(commit_answers);
+                //$(".btn_videre").fadeIn().click(commit_answers);
                 chosen = true;
             }
 

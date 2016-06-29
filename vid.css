@@ -150,6 +150,7 @@ table {
     position: absolute;
     bottom: 5%;
     right: 32%;
+    display:none;
 }
 
 .forfra_knap {
